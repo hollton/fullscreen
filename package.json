@@ -1,0 +1,26 @@
+{
+  "name": "fullscreen",
+  "version": "1.0.0",
+  "description": "The usage of the JavaScript Fullscreen API for cross-browser",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "html-webpack-plugin": "^3.0.6",
+    "webpack": "^3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollton/fullscreen.git"
+  },
+  "author": "holltonliu@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hollton/fullscreen/issues"
+  },
+  "homepage": "https://github.com/hollton/fullscreen#readme"
+}
