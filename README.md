@@ -6,7 +6,7 @@
 ## 使用
 
 ### 浏览器
-暂通过引入打包后的js文件，`window.fullscreen`调用方法。
+`import imageViewer from 'xxx'` 或 `window.fullscreen`
 
 ## API
 
