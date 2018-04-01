@@ -81,7 +81,6 @@ var _index2 = _interopRequireDefault(_index);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.fullscreen = _index2.default;
-
 exports.default = _index2.default;
 
 /***/ }),
@@ -159,16 +158,16 @@ var exit = function exit() {
  * handleChange：事件回调
  */
 var onChange = function onChange(handleChange) {
-  addCommonEventListener(document, 'fullscreenchange', handleChange);
-  addCommonEventListener(document, 'webkitfullscreenchange', handleChange);
-  addCommonEventListener(document, 'mozfullscreenchange', handleChange);
-  addCommonEventListener(document, 'MSFullscreenChange', handleChange);
+  on(document, 'fullscreenchange', handleChange);
+  on(document, 'webkitfullscreenchange', handleChange);
+  on(document, 'mozfullscreenchange', handleChange);
+  on(document, 'MSFullscreenChange', handleChange);
 };
 
 /**
- * [addCommonEventListener 兼容事件绑定]
+ * [on 兼容事件绑定]
  */
-var addCommonEventListener = function addCommonEventListener() {
+var on = function on() {
   var el = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
   var eventName = arguments[1];
   var handleBack = arguments[2];
@@ -182,9 +181,9 @@ var addCommonEventListener = function addCommonEventListener() {
 };
 
 /**
- * [removeCommonEventListener 兼容事件解绑]
+ * [off 兼容事件解绑]
  */
-var removeCommonEventListener = function removeCommonEventListener() {
+var off = function off() {
   var el = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
   var eventName = arguments[1];
   var handleFn = arguments[2];
@@ -202,9 +201,7 @@ exports.default = {
   element: element,
   launch: launch,
   exit: exit,
-  onChange: onChange,
-  addCommonEventListener: addCommonEventListener,
-  removeCommonEventListener: removeCommonEventListener
+  onChange: onChange
 };
 
 /***/ })

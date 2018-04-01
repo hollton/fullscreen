@@ -1,5 +1,5 @@
 {
-  "name": "fullscreen",
+  "name": "el-fullscreen",
   "version": "1.0.0",
   "description": "The usage of the JavaScript Fullscreen API for cross-browser",
   "main": "index.js",

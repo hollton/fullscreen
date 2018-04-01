@@ -51,16 +51,16 @@ const exit = () => {
  * handleChange：事件回调
  */
 const onChange = handleChange => {
-  addCommonEventListener(document, 'fullscreenchange', handleChange)
-  addCommonEventListener(document, 'webkitfullscreenchange', handleChange)
-  addCommonEventListener(document, 'mozfullscreenchange', handleChange)
-  addCommonEventListener(document, 'MSFullscreenChange', handleChange)
+  on(document, 'fullscreenchange', handleChange)
+  on(document, 'webkitfullscreenchange', handleChange)
+  on(document, 'mozfullscreenchange', handleChange)
+  on(document, 'MSFullscreenChange', handleChange)
 }
 
 /**
- * [addCommonEventListener 兼容事件绑定]
+ * [on 兼容事件绑定]
  */
-const addCommonEventListener = (el = document, eventName, handleBack, useCapture) => {
+const on = (el = document, eventName, handleBack, useCapture) => {
   if (el.addEventListener) {
     el.addEventListener(eventName, handleBack, useCapture)
   } else if (el.attachEvent) {
@@ -69,9 +69,9 @@ const addCommonEventListener = (el = document, eventName, handleBack, useCapture
 }
 
 /**
- * [removeCommonEventListener 兼容事件解绑]
+ * [off 兼容事件解绑]
  */
-const removeCommonEventListener = (el = document, eventName, handleFn, useCapture) => {
+const off = (el = document, eventName, handleFn, useCapture) => {
   if (el.removeEventListener) {
     el.removeEventListener(eventName, handleBack, useCapture)
   } else if (el.detachEvent) {
@@ -84,7 +84,5 @@ export default {
   element,
   launch,
   exit,
-  onChange,
-  addCommonEventListener,
-  removeCommonEventListener
+  onChange
 }

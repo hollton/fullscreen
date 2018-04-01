@@ -5,8 +5,17 @@
 
 ## 使用
 
+### npm
+```bash
+npm i el-fullscreen -S
+import fullscreen from 'el-fullscreen'
+```
+
 ### 浏览器
-`import imageViewer from 'xxx'` 或 `window.fullscreen`
+`window.fullscreen`
+
+## Support
+[Supported browsers](http://caniuse.com/fullscreen)
 
 ## API
 
@@ -65,34 +74,3 @@ fullscreen.exit()
 fullscreen.onChange()
 ```
 
-### addCommonEventListener(el, eventName, handleBack, useCapture)
-兼容事件绑定，用于监听全屏状态
-
-#### 参数
-* el：绑定dom
-* eventName：绑定事件名
-* handleBack：绑定回调
-* useCapture：是否冒泡
-
-#### 返回：undefined
-#### 实例
-``` javascript
-fullscreen.addCommonEventListener(document, 'keydown', function(event){
-    // 
-})
-```
-
-### removeCommonEventListener(el, eventName, handleFn, useCapture)
-兼容事件解绑
-
-#### 参数
-* el：解绑dom
-* eventName：解绑事件名
-* handleFn：指定要移除的函数
-* useCapture：是否冒泡
-
-#### 返回：undefined
-#### 实例
-``` javascript
-fullscreen.removeCommonEventListener(document, 'keydown', handleFn)
-```
