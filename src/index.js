@@ -64,7 +64,7 @@ const on = (el = document, eventName, handleBack, useCapture) => {
   if (el.addEventListener) {
     el.addEventListener(eventName, handleBack, useCapture)
   } else if (el.attachEvent) {
-    el.attachEvent(eventName, handleBack, useCapture)
+    el.attachEvent('on' + eventName, handleBack, useCapture)
   }
 }
 
@@ -75,7 +75,7 @@ const off = (el = document, eventName, handleFn, useCapture) => {
   if (el.removeEventListener) {
     el.removeEventListener(eventName, handleBack, useCapture)
   } else if (el.detachEvent) {
-    el.detachEvent(eventName, handleBack, useCapture)
+    el.detachEvent('on' + eventName, handleBack, useCapture)
   }
 }
 

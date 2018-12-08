@@ -6,13 +6,17 @@
 ## 使用
 
 ### npm
-```bash
+```
 npm i el-fullscreen -S
 import fullscreen from 'el-fullscreen'
 ```
 
-### 浏览器
-`window.fullscreen`
+### script
+挂载在全局变量 fullscreen 下
+```
+<script src="dist/fullscreen.min.js"></script>
+window.fullscreen
+```
 
 ## Support
 [Supported browsers](http://caniuse.com/fullscreen)
@@ -22,9 +26,8 @@ import fullscreen from 'el-fullscreen'
 ### supported()
 判断浏览器是否支持全屏
 
-#### 参数：无
-#### 返回：bool , true表支持，false表不支持
-#### 实例
+#### params: 无
+#### return: bool , true表支持，false表不支持
 ``` javascript
 fullscreen.supported()
 // true or false
@@ -33,9 +36,8 @@ fullscreen.supported()
 ### element()
 当前处于全屏状态的dom
 
-#### 参数：无
-#### 返回：object , 全屏状态的dom
-#### 实例
+#### params: 无
+#### return: object , 全屏状态的dom
 ``` javascript
 fullscreen.element()
 ```
@@ -43,11 +45,9 @@ fullscreen.element()
 ### launch(el)
 进入全屏
 
-#### 参数：
+#### params: 
 * el：全屏操作的dom，默认为document.documentElement
-
-#### 返回：undefined
-#### 实例
+#### return: undefined
 ``` javascript
 fullscreen.launch()
 ```
@@ -55,9 +55,8 @@ fullscreen.launch()
 ### exit()
 退出全屏
 
-#### 参数：无
-#### 返回：undefined
-#### 实例
+#### params：无
+#### return: undefined
 ``` javascript
 fullscreen.exit()
 ```
@@ -65,12 +64,9 @@ fullscreen.exit()
 ### onChange()
 全屏状态改变事件
 
-#### 参数
+#### params：
 * handleChange：事件回调
-
-#### 返回：undefined
-#### 实例
+#### return: undefined
 ``` javascript
 fullscreen.onChange()
 ```
-

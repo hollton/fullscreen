@@ -13,25 +13,25 @@
 		<button onclick="launch()">启动全屏</button>
 		<button onclick="exit()">退出全屏</button>
 	</div>
-<script type="text/javascript" src="../dist/bundle.js"></script></body>
+<script type="text/javascript" src="../dist/fullscreen.min.js"></script></body>
 <script type="text/javascript">
 	var isFullscreen = false
 	var textDom = document.getElementById('text')
 	var checkSupport = function() {
-		var isSupport = window.fullscreen.supported()
+		var isSupport = fullscreen.supported()
 		textDom.innerText = isSupport ? '支持全屏' : '不支持全屏'
 	}
 	var fullscreenElement = function() {
-		var element = window.fullscreen.element()
+		var element = fullscreen.element()
 		textDom.innerText = element ? element.tagName : 'null'
 	}
 	var launch = function() {
-		window.fullscreen.launch()
+		fullscreen.launch()
 	}
 	var exit = function() {
-		var element = window.fullscreen.exit()
+		var element = fullscreen.exit()
 	}
-	window.fullscreen.onChange(function(){
+	fullscreen.onChange(function(){
 		isFullscreen = !isFullscreen
 		textDom.innerText = isFullscreen ? '全屏状态' : '非全屏状态'
 	})
