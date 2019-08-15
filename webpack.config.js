@@ -1,13 +1,12 @@
 const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './index.js',
+  entry: './src',
   output: {
-    filename: 'fullscreen.min.js',
-  	path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    path: path.resolve(__dirname),
     library: 'fullscreen',
-    libraryTarget: 'umd'
+    libraryTarget: "umd"
   },
   module: {
   	loaders: [{
@@ -15,8 +14,5 @@ module.exports = {
   		exclude: /node_modules/,
   		loader: 'babel-loader'
   	}]
-  },
-  plugins: [
-    new CleanWebpackPlugin(['dist'])
-  ]
+  }
 };

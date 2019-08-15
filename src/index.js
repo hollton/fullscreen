@@ -79,7 +79,7 @@ const off = (el = document, eventName, handleFn, useCapture) => {
   }
 }
 
-export default {
+export {
   supported,
   element,
   launch,

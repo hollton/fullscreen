@@ -3,35 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<title>跨浏览器使用JavaScript Fullscreen</title>
-</head>
+<script type="text/javascript" src="index.js"></script></head>
 <body>
 	<div id="text" style="height: 500px; line-height: 500px; text-align: center;">(￣︶￣)↘</div>
 	<hr>
 	<div style="text-align: center;">
 		<button onclick="checkSupport()">全屏支持检测</button>
-		<button onclick="fullscreenElement()">全屏状态dom</button>
+		<button onclick="fullscreenEle()">全屏状态dom</button>
 		<button onclick="launch()">启动全屏</button>
+		<button onclick="launch()">按钮全屏</button>
 		<button onclick="exit()">退出全屏</button>
 	</div>
-<script type="text/javascript" src="../dist/fullscreen.min.js"></script></body>
 <script type="text/javascript">
 	var isFullscreen = false
 	var textDom = document.getElementById('text')
 	var checkSupport = function() {
-		var isSupport = fullscreen.supported()
+		var isSupport = window.fullscreen.supported()
 		textDom.innerText = isSupport ? '支持全屏' : '不支持全屏'
 	}
-	var fullscreenElement = function() {
-		var element = fullscreen.element()
+	var fullscreenEle = function() {
+		var element = window.fullscreen.element()
 		textDom.innerText = element ? element.tagName : 'null'
 	}
 	var launch = function() {
-		fullscreen.launch()
+		window.fullscreen.launch()
 	}
 	var exit = function() {
-		var element = fullscreen.exit()
+		var element = window.fullscreen.exit()
 	}
-	fullscreen.onChange(function(){
+	window.fullscreen.onChange(function(){
 		isFullscreen = !isFullscreen
 		textDom.innerText = isFullscreen ? '全屏状态' : '非全屏状态'
 	})
